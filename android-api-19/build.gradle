@@ -1,15 +1,17 @@
 buildscript {
     dependencies {
         repositories {
+            mavenLocal()
             mavenCentral()
         }
 
-        classpath "com.android.tools.build:gradle:1.0.0"
-        classpath "com.github.jcandksolutions.gradle:android-unit-test:2.1.1"
+        classpath "com.android.tools.build:gradle:1.1.0-rc1"
+        classpath "org.robolectric:robolectric-gradle-plugin:1.0.0-SNAPSHOT"
     }
 }
 
 apply plugin: "com.android.application"
+apply plugin: "robolectric"
 
 android {
     compileSdkVersion 19
@@ -25,9 +27,8 @@ android {
     }
 }
 
-apply plugin: "android-unit-test"
-
 dependencies {
     testCompile "junit:junit:4.10"
+    testCompile "org.assertj:assertj-core:1.7.0"
     testCompile "org.robolectric:robolectric:3.0-SNAPSHOT"
 }
