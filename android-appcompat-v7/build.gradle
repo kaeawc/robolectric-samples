@@ -1,6 +1,8 @@
 buildscript {
     dependencies {
         repositories {
+            maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+            mavenLocal()
             mavenCentral()
         }
 
@@ -10,6 +12,7 @@ buildscript {
 }
 
 apply plugin: "com.android.application"
+apply plugin: "org.robolectric"
 
 android {
     compileSdkVersion 21
@@ -24,8 +27,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_7
     }
 }
-
-apply plugin: "android-unit-test"
 
 dependencies {
     compile "com.android.support:appcompat-v7:21.0.+"
