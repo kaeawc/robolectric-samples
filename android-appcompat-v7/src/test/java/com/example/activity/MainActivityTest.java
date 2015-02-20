@@ -12,7 +12,9 @@ import org.robolectric.RobolectricTestRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.robolectric.Shadows.shadowOf;
 
-@RunWith(RobolectricTestRunner.class)
+import com.example.activity.robolectric.Robo;
+
+@RunWith(Robo.class)
 public class MainActivityTest {
 
   @Test
